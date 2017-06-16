@@ -1,0 +1,18 @@
+<form #userForm="ngForm" (submit)="getUser()">
+  <div class="input-box">
+    <div class="input">
+      <label>Github Username:</label>
+      <input
+        type="text"
+        name="username"
+        [(ngModel)]="user.username"
+        #username="ngModel"
+        required>
+    </div>
+    <div class="input-errors" *ngIf="username.errors && (username.touched || username.dirty)">
+      <span class="error" *ngIf="username.errors.required">Please input username</span>
+    </div>
+  </div>
+
+  <button [disabled]="!userForm.form.valid" type="submit">Calculate my Github Score</button>
+</form>

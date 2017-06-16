@@ -1,0 +1,12 @@
+<div class="container score" *ngIf="_valid && _score">
+  <h1>Your Score: {{_value}}</h1>
+  <div class="red" *ngIf="_value < 20">Needs Work!</div>
+  <div class="orange" *ngIf="_value < 50 && _value >= 20">A decent start!</div>
+  <div class="black" *ngIf="_value < 100 && _value >= 50">Doing  Good!</div>
+  <div class="green" *ngIf="_value < 200 && _value >= 100">Great job!</div>
+  <div class="blue" *ngIf="_value >= 200">Github Elite!</div>
+</div>
+
+<div class="container error" *ngIf="!_valid">
+  <h1>"User does not exist, pick a different Github username."</h1>
+</div>
